@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:collaboration id="Collaboration_0kft6oo">
+    <bpmn:participant id="Participant_0x9ji5f" name="Табличная форма работы с заявками" processRef="Process_1" />
+    <bpmn:textAnnotation id="TextAnnotation_1o45mzw">
+      <bpmn:text>До момента официального заключения договора, но предварительно согласованных условий, является достаточным для формирования в системе Завки</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1rpdlar" associationDirection="None" sourceRef="StartEvent_1" targetRef="TextAnnotation_1o45mzw" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1igc68w">
+      <bpmn:lane id="Lane_1b26vk4" name="Менеджер по работе с Клиентами">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_08d0wg5</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1nbxsxg" name="Менеджер по работе с Исполнителями" />
+      <bpmn:lane id="Lane_0y1sxhn" />
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1" name="Предварительно согласованная заявка с Клиентом">
+      <bpmn:outgoing>Flow_0gwyuh9</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0gwyuh9" sourceRef="StartEvent_1" targetRef="Activity_08d0wg5" />
+    <bpmn:task id="Activity_08d0wg5">
+      <bpmn:incoming>Flow_0gwyuh9</bpmn:incoming>
+    </bpmn:task>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0kft6oo">
+      <bpmndi:BPMNShape id="Participant_0x9ji5f_di" bpmnElement="Participant_0x9ji5f" isHorizontal="true">
+        <dc:Bounds x="123" y="60" width="1067" height="860" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1b26vk4_di" bpmnElement="Lane_1b26vk4" isHorizontal="true">
+        <dc:Bounds x="153" y="60" width="1037" height="280" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1nbxsxg_di" bpmnElement="Lane_1nbxsxg" isHorizontal="true">
+        <dc:Bounds x="153" y="340" width="1037" height="270" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0y1sxhn_di" bpmnElement="Lane_0y1sxhn" isHorizontal="true">
+        <dc:Bounds x="153" y="610" width="1037" height="310" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="242" y="112" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="217" y="155" width="86" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08d0wg5_di" bpmnElement="Activity_08d0wg5">
+        <dc:Bounds x="350" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0gwyuh9_di" bpmnElement="Flow_0gwyuh9">
+        <di:waypoint x="278" y="130" />
+        <di:waypoint x="350" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1rpdlar_di" bpmnElement="Association_1rpdlar">
+        <di:waypoint x="256" y="113" />
+        <di:waypoint x="231" y="-10" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1o45mzw_di" bpmnElement="TextAnnotation_1o45mzw">
+        <dc:Bounds x="170" y="-80" width="266.7832653817643" height="69.68124536693847" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
